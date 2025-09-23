@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "555269204160",
+    "project_id": "ci-cd-actions-4e809",
+    "storage_bucket": "ci-cd-actions-4e809.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555269204160:android:e59feef76bc2bca70f6525",
+        "android_client_info": {
+          "package_name": "com.example.ci_cd_actions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPqEjrVysy8beDb7A-lM24xeLkzamTXLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
