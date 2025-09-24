@@ -48,8 +48,10 @@ jobs:
         run: |
           if [[ "${{ github.event.pull_request.base.ref }}" == "main" ]]; then
             echo "ENV=prod" >> $GITHUB_ENV
-          else
+          elif [[ "${{ github.event.pull_request.base.ref }}" == "dev" ]]; then
             echo "ENV=dev" >> $GITHUB_ENV
+          else
+            echo "ENV=local" >> $GITHUB_ENV
           fi
 
       - name: Build APK
