@@ -140,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times: ${const String.fromEnvironment('ENV', defaultValue: 'dev')}',
+              'You have pushed the button this many times Variant check: ${const String.fromEnvironment('ENV', defaultValue: 'dev')}',
             ),
             Text(
               '$_counter',
@@ -156,4 +156,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
 }

@@ -46,10 +46,12 @@ jobs:
       - name: Set ENV based on branch
         id: set_env
         run: |
-          if [[ "${{ github.event.pull_request.base.ref }}" == "prod" ]]; then
+          if [[ "${{ github.event.pull_request.base.ref }}" == "main" ]]; then
             echo "ENV=prod" >> $GITHUB_ENV
-          else
+          elif [[ "${{ github.event.pull_request.base.ref }}" == "dev" ]]; then
             echo "ENV=dev" >> $GITHUB_ENV
+          else
+            echo "ENV=local" >> $GITHUB_ENV
           fi
 
       - name: Build APK
