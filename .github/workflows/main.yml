@@ -7,8 +7,6 @@ on:
     types: [closed]
   # push:
   #   branches:
-  #     - dev
-  #     - test
   #     - main
 
 jobs:
