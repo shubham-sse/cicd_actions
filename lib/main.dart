@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'CI/CD Actions'),
+      home: const MyHomePage(title: 'CI/CD Actions ${const String.fromEnvironment('ENV', defaultValue: 'dev')}'),
     );
   }
 }
@@ -140,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times: ${const String.fromEnvironment('ENV', defaultValue: 'dev')}',
             ),
             Text(
               '$_counter',
