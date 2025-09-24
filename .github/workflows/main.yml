@@ -62,5 +62,5 @@ jobs:
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
             --app "${{ secrets.FIREBASE_APP_ID }}" \
             --groups "internal" \
-            --release-notes "${{ github.event.head_commit.message }}"
+            --release-notes-file "lib/release_note.md"
       
