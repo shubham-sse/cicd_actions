@@ -1,13 +1,41 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-Future<void> main() async {
+
+class Flavor{
+
+  static final Flavor _instance = Flavor._internal();
+  factory Flavor() => _instance;
+  Flavor._internal();
+
+  static const STAGING = "staging";
+  static const PROD = "prod";
+  static const TWO_FACTOR_AUTH = kReleaseMode ;// CURR_ENV == PROD;
+  static const PACKAGENAME = 'com.solarsquare.force_field';
+
+  late String CURR_ENV;
+
+  void setCurrEnv(String env) {
+    CURR_ENV = env;
+  }
+
+  String get currEnv => CURR_ENV;
+
+
+}
+
+Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
+  print(Flavor().currEnv);
+  const String env = String.fromEnvironment('ENV', defaultValue: 'dev');
+  Flavor().setCurrEnv(env);
+  print(Flavor().currEnv);
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +45,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CI/CD Actions',
+      title: 'CI/CD Actions ${const String.fromEnvironment('ENV', defaultValue: 'dev')}',
       theme: ThemeData(
         // This is the theme of your application.
         //
